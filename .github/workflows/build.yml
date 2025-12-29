@@ -34,3 +34,17 @@ jobs:
         with:
           name: OdinAutoGFS
           path: build/libs/*.jar
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
+        with:
+          tag_name: latest
+          name: Latest Auto Build
+          body: |
+            这是由 GitHub Actions 自动生成的最新构建版本。
+            提交信息: ${{ github.event.head_commit.message }}
+          files: build/libs/*.jar
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
