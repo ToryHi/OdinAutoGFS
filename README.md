@@ -1,3 +1,5 @@
-# OdinFabric External Module Example
+# OdinFabric Auto GFS Module
 
 This is a porting project, ported from OdinClient 1.8.9. See [OdinFabric](https://github.com/odtheking/OdinFabric) for details.
+
+Known Issue: Cannot work with SkyHanni Queued Gfs.
